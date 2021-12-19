@@ -1,0 +1,55 @@
+table {
+  width: 100%;
+}
+
+.m-100{
+  margin: 100px;
+}
+
+.nav-icons {
+  height: 30px;
+}
+
+.addUser-icon {
+  position: relative;
+  /* bottom: 10px; */
+  top: 15px;
+  color: green;
+  /* padding-top: 20px; */
+  padding-left: 24px;
+}
+
+.goBack-icon {
+  float: right;
+  cursor: pointer;
+  position: relative;
+  bottom: 15px;
+  right: 20px;
+}
+
+.goBack-link {
+  height: 24px;
+  width: 24px;
+}
+
+.main{
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  margin-top: 30px;
+}
+
+.action svg{
+  margin: 0px 5px 0px 5px;
+}
+
+.header-label-style {
+  color: blue;
+  font-size: 16px;
+}
+
+.version-info {
+  float:right;
+  font-size: 10px;
+}

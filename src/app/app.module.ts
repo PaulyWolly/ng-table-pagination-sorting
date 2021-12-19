@@ -1,18 +1,32 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {MaterialExampleModule} from '../material.module';
+import {TablePaginationExample} from './table-pagination-example';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {HttpClientModule} from '@angular/common/http';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore'
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent
+    TablePaginationExample
   ],
   imports: [
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+    MatNativeDateModule,
+    MaterialExampleModule,
+    ReactiveFormsModule,
+    AngularFirestoreModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [TablePaginationExample],
 })
-export class AppModule { }
+export class AppModule {}
