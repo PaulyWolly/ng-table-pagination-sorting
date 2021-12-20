@@ -40,6 +40,9 @@ export class TablePaginationExample implements OnInit {
   paginator!: MatPaginator;
   @ViewChild(MatSort)
   sort: MatSort;
+  title = "Add a User";
+  add: any;
+  edit: any;
 
   constructor(
     private store: AngularFirestore,
@@ -50,7 +53,10 @@ export class TablePaginationExample implements OnInit {
     this.getAll();
   }
 
-  openDialog(){
+  openDialog(arg: string | undefined){
+    if (arg === 'add') {
+      this.title = 'Add a User'
+    }
     this.btnShow.nativeElement.click();
   }
 
@@ -70,7 +76,8 @@ export class TablePaginationExample implements OnInit {
     this.email = "";
   }
 
-  add(){
+  addUser(){
+
     if(this.editObj){
       this.store.collection('list')
         .doc(this.editObj.id)
@@ -83,7 +90,8 @@ export class TablePaginationExample implements OnInit {
     this.closeDialog();
   }
 
-  edit(id: string){
+  editUser(id: string){
+    this.title = "Edit User"
     this.store.collection('list')
       .doc(id).get()
       .subscribe((response) => {
@@ -91,7 +99,7 @@ export class TablePaginationExample implements OnInit {
         this.name = this.editObj.name;
         this.personalInfo = this.editObj.personalInfo;
         this.email = this.editObj.email;
-        this.openDialog();
+        this.openDialog(this.edit);
       })
       this.clearEdit();
   }

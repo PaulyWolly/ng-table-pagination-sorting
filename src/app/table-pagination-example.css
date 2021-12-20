@@ -60,3 +60,22 @@ table {
   height: 26px;
   width: 26px;
 }
+
+.modal-title {
+  font-size: 20px;
+  position: relative;
+  top: 8px;
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+  background-color: cadetblue;
+  color: white;
+}
