@@ -24,8 +24,8 @@ table {
   float: right;
   cursor: pointer;
   position: relative;
-  bottom: 15px;
-  right: 20px;
+  bottom: 20px;
+  right: 24px;
   /* pointer-events: none; */
 }
 
@@ -57,8 +57,9 @@ table {
 }
 
 .cloud-plus-icon {
-  height: 26px;
-  width: 26px;
+  height: 32px;
+  width: 32px;
+  color: green;
 }
 
 .modal-title {
@@ -78,4 +79,18 @@ table {
   border-top-right-radius: calc(0.3rem - 1px);
   background-color: cadetblue;
   color: white;
+}
+
+.btn-style {
+  /* position: relative;
+  height: 5px;
+  width: 5px; */
+  border: none
+}
+
+.edit-icons {
+  position: relative;
+  float: right;
+  border-bottom: none;
+  top: 14px
 }
