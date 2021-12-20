@@ -3,6 +3,9 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {AngularFirestore} from '@angular/fire/compat/firestore'
 
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+import {MatSort, Sort} from '@angular/material/sort';
+
 /**
  * @title Table with pagination
  */
@@ -35,9 +38,12 @@ export class TablePaginationExample implements OnInit {
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
+  @ViewChild(MatSort)
+  sort: MatSort;
 
   constructor(
-    private store: AngularFirestore
+    private store: AngularFirestore,
+    private _liveAnnouncer: LiveAnnouncer
   ){}
 
   ngOnInit() {
@@ -102,7 +108,21 @@ export class TablePaginationExample implements OnInit {
           return Object.assign({id: item.payload.doc.id}, item.payload.doc.data())
         }))
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       });
+  }
+
+  /** Announce the change in sort state for assistive technology. */
+  announceSortChange(sortState: Sort) {
+    // This example uses English messages. If your application supports
+    // multiple language, you would internationalize these strings.
+    // Furthermore, you can customize the message to add additional
+    // details about the values being sorted.
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
   }
 }
 
