@@ -17,6 +17,7 @@ table {
   color: green;
   /* padding-top: 20px; */
   padding-left: 24px;
+  /* pointer-events: none; */
 }
 
 .goBack-icon {
@@ -25,6 +26,7 @@ table {
   position: relative;
   bottom: 15px;
   right: 20px;
+  /* pointer-events: none; */
 }
 
 .goBack-link {
@@ -52,4 +54,9 @@ table {
 .version-info {
   float:right;
   font-size: 10px;
+}
+
+.cloud-plus-icon {
+  height: 26px;
+  width: 26px;
 }
