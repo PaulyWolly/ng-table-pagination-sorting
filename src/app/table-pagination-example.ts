@@ -55,6 +55,7 @@ export class TablePaginationExample implements OnInit {
   }
 
   closeDialog(){
+    this.clearEdit();
     this.btnClose.nativeElement.click();
   }
 
@@ -78,6 +79,7 @@ export class TablePaginationExample implements OnInit {
       this.store.collection('list')
         .add({name: this.name, personalInfo: this.personalInfo, email: this.email});
     }
+    this.clearEdit();
     this.closeDialog();
   }
 
@@ -91,6 +93,7 @@ export class TablePaginationExample implements OnInit {
         this.email = this.editObj.email;
         this.openDialog();
       })
+      this.clearEdit();
   }
 
   delete(id: string){
